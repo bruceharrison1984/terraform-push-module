@@ -6,9 +6,10 @@
 > **Public modules are not supported since the workflow doesn't make sense for a CI/CD context.**
 
 - The module _must_ adhere to [Hashicorp Standard Module guidelines](https://developer.hashicorp.com/terraform/language/modules/develop/structure)
-- Only single modules can be used, module mono-repos are not supported
+  - At a minimum, your HCL entry point must be in the root of the repository
 - Only `**/*.tf` and `**/README.md` will be included in the uploaded bundle
   - Nested sub-modules will be included in the bundle
+- Only single modules can be used, module mono-repos are not supported
 - Version numbers are entirely managed by you, there is no auto-incrementing
 
 ## Configuration
