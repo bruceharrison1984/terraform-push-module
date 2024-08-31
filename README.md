@@ -11,6 +11,7 @@
   - Nested sub-modules will be included in the bundle
 - Only single modules can be used, module mono-repos are not supported
 - Version numbers are entirely managed by you, there is no auto-incrementing
+- If a module fails to upload, the version will be deleted from HCP/TFE to avoid conflicts on subsequent runs
 
 ## Configuration
 
