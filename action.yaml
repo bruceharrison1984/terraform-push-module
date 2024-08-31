@@ -1,0 +1,39 @@
+name: terraform-push-module
+description: Push a module to a Terraform module registry
+branding:
+  icon: "box"
+  color: "purple"
+inputs:
+  serverUri:
+    description: The root URI of the HCP Terraform/Enterprise server
+    required: true
+    default: https://app.terraform.io/
+  organizationName:
+    description: The name of the organization this module belongs to
+    required: true
+  moduleName:
+    description: The name of the module
+    required: true
+  providerName:
+    description: The name of the provider associated with this module
+    required: true
+  authToken:
+    description: HCP/TFE token with sufficient permissions to manage modules
+    required: true
+  isNoCode:
+    description: Enable `no-code` workflows for this module
+    required: true
+    default: "false"
+  versionString:
+    description: The version tag that will be applied to the module
+    required: true
+outputs:
+  archiveFilepath:
+    description: The file path to the tarball that contains the module code that was uploaded to HCP/TFE
+  moduleName:
+    description: The name of the module that was created
+  moduleVersion:
+    description: The version number of the module that was created
+runs:
+  using: node20
+  main: ./dist/main.js
